@@ -28,6 +28,12 @@ class UsuariosController extends CI_Controller
 
 	public function createUser()
 	{
+		$json = file_get_contents("php://input"); // json string
+		echo $json;
+		print_r($this->input->POST("formulario"));
+		die;
+
+
 		/* Loading the model UsuariosModel and assigning it to the variable Users. */
 		$this->load->model('UsuariosModel', 'Users');
 		$id_costomer = $this->input->POST('id_costomer');
@@ -49,7 +55,7 @@ class UsuariosController extends CI_Controller
 			'phone' => $phone,
 			'address' => $address
 		);
-
+	
 		echo $this->Users->addUser($data);
 	}
 }
