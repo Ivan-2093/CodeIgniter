@@ -52,71 +52,75 @@
                 <div class="container-fluid">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="form-group form-floating">                                        
-                                        <input type="text" class="form-control" id="inputFirstName" placeholder="Primer Nombre">
-                                        <label for="inputFirstName">Primer Nombre</label>
+                            <form id="formCreateUser" name="formCreateUser">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6 col-sm-6">
+                                        <div class="form-group form-floating">
+                                            <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" placeholder="Primer Nombre">
+                                            <label for="inputFirstName">Primer Nombre</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label for="inputSecondName">Segundo Nombre</label>
+                                            <input type="text" class="form-control" id="inputSecondName" name="inputSecondName" placeholder="Segundo Nombre">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label for="inputFirstSurname">Primer Apellido</label>
+                                            <input type="text" class="form-control" id="inputFirstSurname" name="inputFirstSurname" placeholder="Primer Apellido">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label for="inputSecondSurname">Segundo Apellido</label>
+                                            <input type="text" class="form-control" id="inputSecondSurname" name="inputSecondSurname" placeholder="Segundo Apellido">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label for="inputSecondName">Segundo Nombre</label>
-                                        <input type="text" class="form-control" id="inputSecondName" placeholder="Segundo Nombre">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label for="inputIdCostomer">N° Documento</label>
+                                            <input type="number" class="form-control" id="inputIdCostomer" name="inputIdCostomer" placeholder="N° de Documento">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label for="inputPhone">Télefono</label>
+                                            <input type="number" class="form-control" id="inputPhone" name="inputPhone" placeholder="Télefono">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label for="inputEmail">Correo</label>
+                                            <input type="email" class="form-control" id="inputEmail" name="inputEmail"   placeholder="Correo electronico">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-6">
+                                        <div class="form-group">
+                                            <label for="inputPerfilUser">Perfil del Usuario</label>
+                                            <input type="number" class="form-control" id="inputPerfilUser" name="inputPerfilUser" placeholder="Perfil del Usuario">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label for="inputFirstSurname">Primer Apellido</label>
-                                        <input type="text" class="form-control" id="inputFirstSurname" placeholder="Primer Apellido">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label for="inputSecondSurname">Segundo Apellido</label>
-                                        <input type="text" class="form-control" id="inputSecondName" placeholder="Segundo Apellido">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-2 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label for="inputIdCostomer">N° Documento</label>
-                                        <input type="number" class="form-control" id="inputIdCostomer" placeholder="N° de Documento">
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label for="inputPhone">Télefono</label>
-                                        <input type="number" class="form-control" id="inputPhone" placeholder="Télefono">
-                                    </div>
-                                </div>
-                                <div class="col-lg-5 col-md-6 col-sm-12">
-                                    <div class="form-group">
-                                        <label for="inputEmail">Correo</label>
-                                        <input type="email" class="form-control" id="inputEmail" placeholder="Correo electronico">
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <label for="inputPerfilUser">Perfil del Usuario</label>
-                                        <input type="number" class="form-control" id="inputPerfilUser" placeholder="Perfil del Usuario">
-                                    </div>
-                                </div>
-                            </div>
+                            </form>
 
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" onclick="">Guardar</button>
+                    <button type="button" class="btn btn-primary" onclick="insert();">Guardar</button>
                 </div>
             </div>
         </div>
     </div>
 
 
-
+    <script type="text/javascript">
+        const base_url = "<?php echo base_url() ?>";
+    </script>
     <script src="<?php base_url() ?>js/Usuarios/funciones.js"></script>
     <?php $this->load->view('footer');
