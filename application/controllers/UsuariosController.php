@@ -28,22 +28,16 @@ class UsuariosController extends CI_Controller
 
 	public function createUser()
 	{
-		$json = file_get_contents("php://input"); // json string
-		echo $json;
-		print_r($this->input->POST("formulario"));
-		die;
-
-
 		/* Loading the model UsuariosModel and assigning it to the variable Users. */
 		$this->load->model('UsuariosModel', 'Users');
-		$id_costomer = $this->input->POST('id_costomer');
-		$first_name = $this->input->POST('first_name');
-		$second_name = $this->input->POST('second_name');
-		$first_surname = $this->input->POST('first_surname');
-		$second_surname = $this->input->POST('second_surname');
-		$email = $this->input->POST('email');
-		$phone = $this->input->POST('phone');
-		$address = $this->input->POST('address');
+		$id_costomer = $this->input->POST('inputIdCostomer');
+		$first_name = $this->input->POST('inputFirstName');
+		$second_name = $this->input->POST('inputSecondName');
+		$first_surname = $this->input->POST('inputFirstSurname');
+		$second_surname = $this->input->POST('inputSecondSurname');
+		$email = $this->input->POST('inputEmail');
+		$phone = $this->input->POST('inputPhone');
+		$address = $this->input->POST('inputPerfilUser');
 
 		$data = array(
 			'id_costomer' => $id_costomer,
@@ -55,7 +49,7 @@ class UsuariosController extends CI_Controller
 			'phone' => $phone,
 			'address' => $address
 		);
-	
-		echo $this->Users->addUser($data);
+
+		echo json_encode($this->Users->addUser($data));
 	}
 }
