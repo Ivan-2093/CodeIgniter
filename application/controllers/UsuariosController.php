@@ -39,6 +39,7 @@ class UsuariosController extends CI_Controller
 		$phone = $this->input->POST('inputPhone');
 		$address = $this->input->POST('inputPerfilUser');
 
+
 		$data = array(
 			'id_costomer' => $id_costomer,
 			'first_name' => $first_name,
@@ -49,7 +50,26 @@ class UsuariosController extends CI_Controller
 			'phone' => $phone,
 			'address' => $address
 		);
-
-		echo json_encode($this->Users->addUser($data));
+		if (count($this->Users->getUser($id_costomer)->result()) == 0) {
+			if ($this->Users->addUser($data)) {
+				$dataResult = array(
+					'resultado' => 'success',
+					'data' => $data,
+				);
+				echo json_encode($dataResult);
+			} else {
+				$dataResult = array(
+					'resultado' => 'error',
+					'data' => $data,
+				);
+				echo json_encode($dataResult);
+			}
+		} else {
+			$dataResult = array(
+				'resultado' => 'error',
+				'data' => $data,
+			);
+			echo json_encode($dataResult);
+		}
 	}
 }
