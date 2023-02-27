@@ -6,7 +6,7 @@
 		<div class="row text-muted">
 			<div class="col-6 text-start">
 				<p class="mb-0">
-					<a class="text-muted" href="" target=""><strong>Copyright © 2023</strong></a> - <a class="text-muted" href="" target=""><strong>Sergio Ivan Galvis Esteban</strong></a>
+					<strong>Powered by: Sergio Ivan Galvis Esteban Copyright © 2023</strong>
 				</p>
 			</div>
 			<div class="col-6 text-end">
